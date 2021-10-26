@@ -1,10 +1,4 @@
 #!/usr/bin/env python3
-import smbus
-from time import sleep
-
-import RPi.GPIO as GPIO
-
-
 
 import PCF8591 as ADC
 
