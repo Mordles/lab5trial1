@@ -20,9 +20,13 @@ def loop():
 def destroy():
   ADC.write(0)
 
-setup()
-if (ADC.read(0) > 210):
-  GPIO.output(26, 0)
+while True:
+  if (ADC.read(0) < 210):
+    setup()
+    print(ADC.read(0))
+    ADC.write(ADC.read(0))
+  elif (ADC.read(0) > 210):
+    GPIO.output(26, 0) 
 
 """
 if __name__ == "__main__":
