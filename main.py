@@ -20,7 +20,7 @@ def loop():
 def destroy():
   ADC.write(0)
 
-while True:
+"""while True:
   if (ADC.read(0) < 210):
     setup()
     print(ADC.read(0))
@@ -35,5 +35,5 @@ if __name__ == "__main__":
     loop()
   except KeyboardInterrupt:
     destroy()
-"""
+
 
