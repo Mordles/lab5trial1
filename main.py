@@ -2,6 +2,13 @@
 
 import PCF8591 as ADC
 
+import RPi.GPIO as GPIO
+
+GPIO.setmode(GPIO.BCM)
+
+GPIO.setup(26, GPIO.OUT)
+GPIO.output(26, 1)
+
 def setup():
   ADC.setup(0x48)
 
