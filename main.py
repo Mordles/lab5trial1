@@ -20,11 +20,16 @@ def loop():
 def destroy():
   ADC.write(0)
 
+setup()
+if (ADC.read(0) > 210):
+  GPIO.output(26, 0)
+
+"""
 if __name__ == "__main__":
   try:
     setup()
     loop()
   except KeyboardInterrupt:
     destroy()
-
+"""
 
