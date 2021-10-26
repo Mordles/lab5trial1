@@ -9,7 +9,6 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(26, GPIO.OUT)
 GPIO.output(26, 1)
 
-x = 0
 
 def setup():
   ADC.setup(0x48)
@@ -23,14 +22,11 @@ def destroy():
   ADC.write(0)
 
 setup()
-while (x == 0):
-  if (ADC.read(0) < 210):
-    print(ADC.read(0))
-    ADC.write(ADC.read(0))
-    x = 0
-  elif (ADC.read(0) > 210):
-    GPIO.output(26, 0) 
-    x = 1
+while (ADC.read(0) < 210):
+  print(ADC.read(0))
+  ADC.write(ADC.read(0))
+GPIO.cleanup()  
+  
 
 """
 if __name__ == "__main__":
