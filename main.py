@@ -25,7 +25,7 @@ setup()
 while (ADC.read(0) < 210):
   print(ADC.read(0))
   ADC.write(ADC.read(0))
-GPIO.cleanup()  
+
   
 
 """
